@@ -1,0 +1,79 @@
+@model List<ToaNha>
+@{
+    ViewData["Title"] = "Hạ tầng KTX";
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>🏢 Quản lý hạ tầng ký túc xá</h4>
+    <a asp-action="TaoToaNha" class="btn btn-primary">+ Thêm tòa nhà</a>
+</div>
+
+@foreach (var toa in Model)
+{
+    <div class="card mb-3">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <div><b>@toa.TenToaNha</b> <span class="text-muted small">@toa.MoTa</span></div>
+        </div>
+        <div class="card-body">
+            @foreach (var tang in toa.DanhSachTang.OrderBy(t => t.SoThuTu))
+            {
+                <div class="mb-2 ps-2 border-start border-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <b>Tầng @tang.SoThuTu</b>
+                        <a asp-action="TaoPhong" asp-route-tangId="@tang.Id" class="btn btn-sm btn-outline-primary">+ Thêm phòng</a>
+                    </div>
+                    <div class="row mt-2">
+                        @foreach (var phong in tang.DanhSachPhong)
+                        {
+                            <div class="col-md-4 mb-2">
+                                <div class="card h-100">
+                                    <div class="card-body py-2">
+                                        <div class="d-flex justify-content-between">
+                                            <b>Phòng @phong.SoPhong</b>
+                                            <span class="badge text-bg-@(phong.TrangThai == TrangThaiPhong.Trong ? "success" : phong.TrangThai == TrangThaiPhong.Day ? "danger" : phong.TrangThai == TrangThaiPhong.BaoTri ? "secondary" : "warning")">@phong.TrangThai</span>
+                                        </div>
+                                        <div class="small text-muted">Sức chứa: @phong.SucChua — Giá: @phong.DonGiaThang.ToString("N0")đ/tháng</div>
+                                        <div class="small">Giường trống: <b>@phong.DanhSachGiuong.Count(g => g.TrangThai == TrangThaiGiuong.Trong)</b>/@phong.DanhSachGiuong.Count</div>
+                                        <ul class="list-unstyled small mb-1 mt-1">
+                                            @foreach (var g in phong.DanhSachGiuong)
+                                            {
+                                                <li>
+                                                    @g.SoGiuong -
+                                                    @if (g.TrangThai == TrangThaiGiuong.DaCoNguoi)
+                                                    {
+                                                        <span class="text-danger">@g.SinhVien?.MSSV</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-success">Trống</span>
+                                                    }
+                                                </li>
+                                            }
+                                        </ul>
+                                        <form asp-action="DoiTrangThaiPhong" method="post" class="d-flex gap-1">
+                                            <input type="hidden" name="phongId" value="@phong.Id" />
+                                            <select name="trangThai" class="form-select form-select-sm">
+                                                @foreach (var tt in Enum.GetValues<TrangThaiPhong>())
+                                                {
+                                                    if (tt == phong.TrangThai)
+                                                    {
+                                                        <option value="@tt" selected>@tt</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@tt">@tt</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <button type="submit" class="btn btn-sm btn-outline-dark">Cập nhật</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+            <a asp-action="TaoTang" asp-route-toaNhaId="@toa.Id" class="btn btn-sm btn-outline-secondary mt-2">+ Thêm tầng</a>
+        </div>
+    </div>
+}

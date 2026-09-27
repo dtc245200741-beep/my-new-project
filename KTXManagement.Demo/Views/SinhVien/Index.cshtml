@@ -1,0 +1,28 @@
+@model List<SinhVien>
+@{ ViewData["Title"] = "Hồ sơ sinh viên"; }
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>🎓 Hồ sơ sinh viên nội trú</h4>
+    <a asp-action="TaoMoi" class="btn btn-primary">+ Thêm sinh viên</a>
+</div>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>MSSV</th><th>Họ tên</th><th>Lớp</th><th>Khoa</th><th>Giới tính</th><th>Trạng thái ở</th><th>Công nợ</th><th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sv in Model)
+        {
+            <tr>
+                <td>@sv.MSSV</td>
+                <td>@sv.TaiKhoan?.HoTen</td>
+                <td>@sv.Lop</td>
+                <td>@sv.Khoa</td>
+                <td>@sv.GioiTinh</td>
+                <td><span class="badge text-bg-info">@sv.TrangThaiO</span></td>
+                <td class="@(sv.CongNo?.TongNoHienTai > 0 ? "text-danger" : "text-success")">@((sv.CongNo?.TongNoHienTai ?? 0).ToString("N0"))đ</td>
+                <td><a asp-action="ChiTiet" asp-route-id="@sv.Id" class="btn btn-sm btn-outline-primary">Chi tiết</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
