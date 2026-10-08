@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập Tạo form đơn giản</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        margin: 20px;
+        color: #333;
+      }
+      .form-container {
+        background: #ffffff;
+        max-width: 600px;
+        margin: 0 auto 30px auto;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 8px;
+        margin-top: 0;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"],
+      .form-group input[type="date"],
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .radio-group,
+      .checkbox-group {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      .btn-group {
+        margin-top: 20px;
+      }
+      .btn-submit {
+        background-color: #2ecc71;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .btn-reset {
+        background-color: #e74c3c;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PHẦN 1: FORM THÔNG TIN CƠ BẢN -->
+    <div class="form-container">
+      <h2>Phần 1: Form Sở Thích Của Tôi</h2>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="yourname">Họ và tên:</label>
+          <input
+            type="text"
+            id="yourname"
+            name="yourname"
+            placeholder="Nhập họ và tên"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email1">Email:</label>
+          <input
+            type="email"
+            id="email1"
+            name="email"
+            placeholder="Nhập email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Sở thích:</label>
+          <div class="checkbox-group">
+            <label
+              ><input type="checkbox" name="hobby" value="thethao" /> Thể
+              thao</label
+            >
+            <label
+              ><input type="checkbox" name="hobby" value="amnhac" /> Âm
+              nhạc</label
+            >
+            <label
+              ><input type="checkbox" name="hobby" value="dienthoai" /> Đọc
+              sách</label
+            >
+            <label
+              ><input type="checkbox" name="hobby" value="dulich" /> Du
+              lịch</label
+            >
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <input type="submit" value="Gửi thông tin" class="btn-submit" />
+          <input type="reset" value="Nhập lại" class="btn-reset" />
+        </div>
+      </form>
+    </div>
+
+    <!-- PHẦN 2: FORM ĐĂNG KÝ HỌC VIÊN -->
+    <div class="form-container">
+      <h2>Phần 2: Form Đăng Ký Học Viên</h2>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="fullname">Họ và tên:</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Nhập đầy đủ họ tên"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email2">Email:</label>
+          <input
+            type="email"
+            id="email2"
+            name="email"
+            placeholder="example@gmail.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Số điện thoại:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Nhập số điện thoại"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="birthday">Ngày sinh:</label>
+          <input type="date" id="birthday" name="birthday" />
+        </div>
+
+        <div class="form-group">
+          <label>Giới tính:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" value="Nam" /> Nam</label>
+            <label><input type="radio" name="gender" value="Nữ" /> Nữ</label>
+            <label
+              ><input type="radio" name="gender" value="Khác" /> Khác</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Địa chỉ:</label>
+          <textarea
+            id="address"
+            name="address"
+            rows="3"
+            placeholder="Nhập địa chỉ cư trú"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Khóa học:</label>
+          <select id="course" name="course">
+            <option value="HTML & CSS">HTML & CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Hình thức học:</label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="study_type" value="Online" />
+              Online</label
+            >
+            <label
+              ><input type="radio" name="study_type" value="Offline" />
+              Offline</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Sở thích:</label>
+          <div class="checkbox-group">
+            <label
+              ><input type="checkbox" name="hobby" value="LapTrinh" /> Lập
+              trình</label
+            >
+            <label
+              ><input type="checkbox" name="hobby" value="DocSach" /> Đọc
+              sách</label
+            >
+            <label
+              ><input type="checkbox" name="hobby" value="GiaiTri" /> Giải
+              trí</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="note">Ghi chú:</label>
+          <textarea
+            id="note"
+            name="note"
+            rows="3"
+            placeholder="Ghi chú thêm..."
+          ></textarea>
+        </div>
+
+        <div class="btn-group">
+          <input type="submit" value="Đăng ký" class="btn-submit" />
+          <input type="reset" value="Nhập lại" class="btn-reset" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
