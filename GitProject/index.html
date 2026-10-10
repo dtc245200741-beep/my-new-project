@@ -3,27 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bài tập Sử dụng Box Model 1</title>
-    <!-- Liên kết tới tệp style.css -->
-    <link rel="stylesheet" href="style.css" />
+    <title>Thực hành Tạo Menu Dọc Dropdown</title>
+    <style>
+      /* 1. Thiết lập chung để tránh sai khác giữa các trình duyệt */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 2. Định dạng các thẻ li (mục trong danh sách) */
+      #menu li {
+        list-style: none; /* Bỏ ký hiệu đầu dòng bullet */
+        position: relative; /* Cố định vị trí cho danh sách con theo thẻ li này */
+        width: 120px;
+        height: 30px;
+        padding: 0 20px;
+        background-color: black; /* Màu nền đen */
+        line-height: 30px; /* Chiều cao dòng bằng chiều cao li để căn giữa chữ */
+        cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay */
+      }
+
+      /* 3. Định dạng các liên kết (thẻ a) */
+      #menu a {
+        text-decoration: none; /* Bỏ gạch chân liên kết */
+        color: white; /* Màu chữ trắng */
+        display: block;
+      }
+
+      /* 4. Hiệu ứng khi di chuột qua các mục menu chính */
+      #menu li:hover {
+        background-color: #333333; /* Đổi màu nền khi hover */
+      }
+
+      /* 5. Định dạng danh sách con (Sub-menu) - Ẩn mặc định */
+      #menu li ul {
+        position: absolute; /* Định vị tuyệt đối theo li cha */
+        top: 0;
+        left: 160px; /* Xuất hiện bên phải menu cha (width 120px + padding 40px = 160px) */
+        visibility: hidden; /* Ẩn danh sách con */
+      }
+
+      /* 6. Hiển thị danh sách con khi rê chuột vào thẻ li cha */
+      #menu li:hover > ul {
+        visibility: visible; /* Hiện menu con khi hover */
+      }
+    </style>
   </head>
   <body>
-    <h1>So Sánh Content-Box và Border-Box Trong CSS</h1>
+    <h2>Menu Dọc Dropdown</h2>
 
-    <!-- Thẻ 1: content-box (màu xanh lá) -->
-    <div class="card">
-      Thẻ 1 (content-box): Kích thước tổng = 280 + 40 (padding) + 10 (border) =
-      330px chiều rộng.
-    </div>
-
-    <!-- Thẻ 2: border-box (màu vàng) -->
-    <div class="card">
-      Thẻ 2 (border-box): Kích thước tổng giữ nguyên đúng 280px chiều rộng.
-    </div>
-
-    <!-- Thẻ 3: border-box (màu đỏ) -->
-    <div class="card">
-      Thẻ 3 (border-box): Kích thước tổng giữ nguyên đúng 280px chiều rộng.
+    <!-- Cấu trúc Menu dọc lồng nhau -->
+    <div id="menu">
+      <ul>
+        <li>
+          <a href="#">Trang chủ</a>
+        </li>
+        <li>
+          <a href="#">Sản phẩm</a>
+          <!-- Menu con thứ nhất -->
+          <ul>
+            <li><a href="#">Điện thoại</a></li>
+            <li><a href="#">Máy tính</a></li>
+            <li><a href="#">Phụ kiện</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Dịch vụ</a>
+          <!-- Menu con thứ hai -->
+          <ul>
+            <li><a href="#">Bảo hành</a></li>
+            <li><a href="#">Sửa chữa</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Liên hệ</a>
+        </li>
+      </ul>
     </div>
   </body>
 </html>

@@ -1,36 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<style>
-#demo {
-   width: 350px;
-   display: flex;
-   float: left;
-   border: 6px solid black;
-   border-radius: 6%;
-}
-.d1 {
-   margin-left: 20px;
-   width: 150px;
-   height: 80px;
-   box-shadow: 0 0 0 4px mediumslateblue;
-   box-sizing: border-box;
-   border-radius: 36%;
-}
-.d2 {
-   width: 150px;
-   height: 80px;
-   padding: 30px;
-   box-shadow: 0 0 0 4px darkred;
-   box-sizing: border-box;
-   border-radius: 36%;
-}
-</style>
-</head>
-<body>
-<div id="demo">
-<div class="d1"></div>
-<div class="d2"></div>
-</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Open Source Records</title>
+    <style type="text/css">
+      /* Reset CSS cơ bản */
+      html,
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      ul,
+      ol,
+      li,
+      p,
+      a {
+        padding: 0;
+        border: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333333;
+        padding: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Định dạng tiêu đề chính */
+      h1 {
+        color: #000000;
+        font-size: 32px;
+        margin-bottom: 15px;
+        border-bottom: 3px solid #440000;
+        padding-bottom: 10px;
+      }
+
+      /* Định dạng menu điều hướng top */
+      body > ul:first-of-type {
+        list-style: none;
+        background-color: #440000;
+        padding: 10px 15px;
+        margin-bottom: 25px;
+        border-radius: 4px;
+        display: flex;
+        gap: 20px;
+      }
+
+      body > ul:first-of-type li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      body > ul:first-of-type li a:hover {
+        text-decoration: underline;
+      }
+
+      /* Định dạng các tiêu đề h2, h3 */
+      h2 {
+        color: #000000;
+        font-size: 22px;
+        margin-top: 25px;
+        margin-bottom: 12px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #cccccc;
+      }
+
+      h3 {
+        color: #333333;
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 8px;
+      }
+
+      /* Định dạng danh sách ul, li nội dung */
+      ul {
+        padding-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      p {
+        color: #444444;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      a {
+        color: #440000;
+        text-decoration: underline;
+      }
+
+      /* Định dạng danh sách lịch diễn Tour Dates */
+      body > ul:last-of-type {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      body > ul:last-of-type li {
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      body > ul:last-of-type li p {
+        margin-bottom: 4px;
+      }
+
+      body > ul:last-of-type li p:first-child {
+        font-weight: bold;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Open Source Records</h1>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="bands.html">Bands</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <h2>Regular Expressions</h2>
+    <h3>Bio</h3>
+    <p>Regular Expressionists are a hip-hop trio from New York City.</p>
+
+    <h3>Members</h3>
+    <ul>
+      <li>Rekt - Vocals</li>
+      <li>Face-like - Vocals</li>
+      <li>DJ Regex Capture - Decks</li>
+    </ul>
+
+    <h3>Albums</h3>
+    <p>
+      This group has no albums released, but they are recording one album right
+      now.
+    </p>
+
+    <h2>Tour Dates</h2>
+    <ul>
+      <li>
+        <p>July 16th, 2014 @ 7:00pm</p>
+        <p><a href="http://hob.com">House of Blues</a> - Orlando, FL</p>
+      </li>
+      <li>
+        <p>July 17th, 2014 @ 7:30pm</p>
+        <p>Jannus Landing - Tampa, FL</p>
+      </li>
+      <li>
+        <p>July 19th, 2014 @ 8:00pm</p>
+        <p>The Tabernacle - Atlanta, GA</p>
+      </li>
+      <li>
+        <p>July 20th, 2014 @ 7:30pm</p>
+        <p>40 Watt Club - Athens, GA</p>
+      </li>
+    </ul>
+  </body>
 </html>
