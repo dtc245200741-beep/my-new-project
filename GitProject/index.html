@@ -3,72 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang Chủ Giản Lược</title>
+    <title>Bố cục bằng Float</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Fixed Header -->
-    <header class="main-header">
-      <h1>Tiêu đề Trang Web</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Trang chủ</a></li>
-          <li><a href="#">Giới thiệu</a></li>
-          <li><a href="#">Dịch vụ</a></li>
-          <li><a href="#">Liên hệ</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Bố cục chính 3 cột -->
-    <div class="page-container">
-      <!-- Sidebar Trái -->
-      <aside class="sidebar left-sidebar">
-        <h3>Sidebar Trái</h3>
-        <ul>
-          <li>Mục 1</li>
-          <li>Mục 2</li>
-          <li>Mục 3</li>
-        </ul>
-      </aside>
-
-      <!-- Nội dung chính -->
-      <main class="main-content">
-        <h2>Nội dung chính của trang</h2>
-        <p>
-          Đây là khu vực chứa nội dung quan trọng nhất của trang web. Chúng ta
-          sẽ đặt các bài viết, sản phẩm, hoặc thông tin chi tiết tại đây.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
-          amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam,
-          quas. Dolorum, quod. Quos, nemo. Dolore, quod.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
-          amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam,
-          quas. Dolorum, quod. Quos, nemo. Dolore, quod.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
-          amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam,
-          quas. Dolorum, quod. Quos, nemo. Dolore, quod.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
-          amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam,
-          quas. Dolorum, quod. Quos, nemo. Dolore, quod.
-        </p>
-      </main>
-
-      <!-- Sidebar Phải -->
-      <aside class="sidebar right-sidebar">
-        <h3>Sidebar Phải</h3>
-        <p>
-          Đây là một sidebar khác, có thể chứa quảng cáo, bài viết liên quan
-          hoặc các widget khác.
-        </p>
-      </aside>
+    <div class="container">
+      <div class="left-column">
+        <h2>Nội dung chính</h2>
+        <p>Cột bên trái chứa nội dung chính với chiều rộng 60%.</p>
+      </div>
+      <div class="right-column">
+        <h3>Sidebar</h3>
+        <p>Cột bên phải chứa sidebar với chiều rộng 38%.</p>
+      </div>
     </div>
   </body>
 </html>

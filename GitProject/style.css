@@ -1,113 +1,29 @@
-/* Thiết lập cơ bản */
-html {
-  height: 100%;
+/* Container bao bọc toàn bộ bố cục */
+.container {
+  width: 100%;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  min-height: 1500px; /* Đảm bảo đủ chiều cao để cuộn kiểm tra fixed header */
-  padding-top: 70px; /* Bù khoảng trống chiều cao header để không bị che nội dung */
-}
-
-/* Header cố định (Fixed Header) */
-.main-header {
-  position: fixed; /* Cố định vị trí header */
-  top: 0; /* Dính lề trên */
-  left: 0; /* Dính lề trái */
-  width: 100%; /* Phủ kín chiều rộng */
-  background-color: #333333;
-  color: white;
-  padding: 15px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  display: flex; /* Dùng Flexbox căn chỉnh logo/tiêu đề và menu nav */
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000; /* Luôn nổi trên cùng các phần tử khác */
+/* Cột bên trái: Chiếm 60% chiều rộng */
+.left-column {
+  width: 60%;
+  float: left;
+  background-color: lightblue;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-.main-header h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.main-header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.main-header nav ul li {
-  margin-left: 20px;
-}
-
-.main-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.main-header nav ul li a:hover {
-  color: #3498db;
-}
-
-/* Container chính chia 3 cột (Flexbox Layout) */
-.page-container {
-  display: flex; /* Kích hoạt Flexbox */
-  justify-content: space-between;
-  margin: 20px;
-  gap: 20px; /* Khoảng cách giữa các cột */
-}
-
-/* Kiểu dáng chung cho Sidebars */
-.sidebar {
-  background-color: #ffffff;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0; /* Giữ nguyên kích thước không co lại */
-}
-
-.left-sidebar {
-  width: 200px; /* Chiều rộng cố định sidebar trái */
-}
-
-.right-sidebar {
-  width: 200px; /* Chiều rộng cố định sidebar phải */
-}
-
-.sidebar h3 {
-  margin-top: 0;
-  color: #333333;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 10px;
-  color: #555555;
-}
-
-/* Nội dung chính */
-.main-content {
-  background-color: #ffffff;
+/* Cột bên phải: Chiếm 38% chiều rộng */
+.right-column {
+  width: 38%;
+  float: right;
+  background-color: lightgreen;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  flex-grow: 1; /* Tự động mở rộng chiếm toàn bộ diện tích giữa 2 sidebar */
+  box-sizing: border-box;
 }
 
-.main-content h2 {
-  margin-top: 0;
-}
-
-.main-content p {
-  color: #444444;
-  line-height: 1.6;
+/* Kỹ thuật Clearfix xử lý tràn khung float */
+.container::after {
+  content: "";
+  display: block;
+  clear: both;
 }
