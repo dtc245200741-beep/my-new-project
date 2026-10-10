@@ -3,61 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thực hành Tạo Menu Dọc Dropdown</title>
+    <title>Thực hành Tạo Menu Ngang Dropdown</title>
     <style>
-      /* 1. Thiết lập chung để tránh sai khác giữa các trình duyệt */
+      /* 1. Thiết lập chung phông chữ và reset margin/padding */
       body {
         font-family: Arial, sans-serif;
         margin: 20px;
       }
 
-      ul {
+      /* 2. Thiết lập khung phân vùng cho menu */
+      #menu {
+        height: 40px;
+        background-color: #333333;
+        border-radius: 4px;
+      }
+
+      #menu ul {
         margin: 0;
         padding: 0;
+        list-style: none;
       }
 
-      /* 2. Định dạng các thẻ li (mục trong danh sách) */
-      #menu li {
-        list-style: none; /* Bỏ ký hiệu đầu dòng bullet */
-        position: relative; /* Cố định vị trí cho danh sách con theo thẻ li này */
-        width: 120px;
-        height: 30px;
-        padding: 0 20px;
-        background-color: black; /* Màu nền đen */
-        line-height: 30px; /* Chiều cao dòng bằng chiều cao li để căn giữa chữ */
-        cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay */
+      /* 3. Định dạng thẻ li cho menu cấp 1 xếp nằm ngang */
+      #menu > ul > li {
+        float: left; /* Xếp các mục menu chính thành hàng ngang */
+        position: relative; /* Tạo gốc tọa độ cho menu con thả xuống */
       }
 
-      /* 3. Định dạng các liên kết (thẻ a) */
+      /* 4. Định dạng thẻ liên kết a trong menu */
       #menu a {
-        text-decoration: none; /* Bỏ gạch chân liên kết */
-        color: white; /* Màu chữ trắng */
         display: block;
+        width: 130px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
       }
 
-      /* 4. Hiệu ứng khi di chuột qua các mục menu chính */
-      #menu li:hover {
-        background-color: #333333; /* Đổi màu nền khi hover */
+      /* 5. Đổi màu nền sang màu đỏ khi rê chuột qua mục liên kết */
+      #menu a:hover {
+        background-color: #e74c3c;
       }
 
-      /* 5. Định dạng danh sách con (Sub-menu) - Ẩn mặc định */
-      #menu li ul {
-        position: absolute; /* Định vị tuyệt đối theo li cha */
-        top: 0;
-        left: 160px; /* Xuất hiện bên phải menu cha (width 120px + padding 40px = 160px) */
-        visibility: hidden; /* Ẩn danh sách con */
+      /* 6. Định dạng danh sách menu con (cấp 2) - Định vị và Ẩn mặc định */
+      #menu ul ul {
+        position: absolute;
+        top: 40px; /* Xuất hiện ngay phía dưới thanh menu chính */
+        left: 0;
+        background-color: #444444;
+        visibility: hidden; /* Ẩn menu con mặc định */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
 
-      /* 6. Hiển thị danh sách con khi rê chuột vào thẻ li cha */
+      /* Đảm bảo các mục trong menu con xếp dọc */
+      #menu ul ul li {
+        float: none;
+      }
+
+      /* 7. Hiển thị menu con khi di chuột vào mục menu cha */
       #menu li:hover > ul {
         visibility: visible; /* Hiện menu con khi hover */
       }
     </style>
   </head>
   <body>
-    <h2>Menu Dọc Dropdown</h2>
+    <h2>Menu Ngang Dropdown</h2>
 
-    <!-- Cấu trúc Menu dọc lồng nhau -->
+    <!-- Cấu trúc Menu ngang lồng nhau -->
     <div id="menu">
       <ul>
         <li>
@@ -65,7 +79,7 @@
         </li>
         <li>
           <a href="#">Sản phẩm</a>
-          <!-- Menu con thứ nhất -->
+          <!-- Menu con thả xuống -->
           <ul>
             <li><a href="#">Điện thoại</a></li>
             <li><a href="#">Máy tính</a></li>
@@ -74,7 +88,7 @@
         </li>
         <li>
           <a href="#">Dịch vụ</a>
-          <!-- Menu con thứ hai -->
+          <!-- Menu con thả xuống -->
           <ul>
             <li><a href="#">Bảo hành</a></li>
             <li><a href="#">Sửa chữa</a></li>
