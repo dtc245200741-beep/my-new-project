@@ -3,101 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thực hành Tạo Menu Ngang Dropdown</title>
-    <style>
-      /* 1. Thiết lập chung phông chữ và reset margin/padding */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-
-      /* 2. Thiết lập khung phân vùng cho menu */
-      #menu {
-        height: 40px;
-        background-color: #333333;
-        border-radius: 4px;
-      }
-
-      #menu ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      /* 3. Định dạng thẻ li cho menu cấp 1 xếp nằm ngang */
-      #menu > ul > li {
-        float: left; /* Xếp các mục menu chính thành hàng ngang */
-        position: relative; /* Tạo gốc tọa độ cho menu con thả xuống */
-      }
-
-      /* 4. Định dạng thẻ liên kết a trong menu */
-      #menu a {
-        display: block;
-        width: 130px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      /* 5. Đổi màu nền sang màu đỏ khi rê chuột qua mục liên kết */
-      #menu a:hover {
-        background-color: #e74c3c;
-      }
-
-      /* 6. Định dạng danh sách menu con (cấp 2) - Định vị và Ẩn mặc định */
-      #menu ul ul {
-        position: absolute;
-        top: 40px; /* Xuất hiện ngay phía dưới thanh menu chính */
-        left: 0;
-        background-color: #444444;
-        visibility: hidden; /* Ẩn menu con mặc định */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Đảm bảo các mục trong menu con xếp dọc */
-      #menu ul ul li {
-        float: none;
-      }
-
-      /* 7. Hiển thị menu con khi di chuột vào mục menu cha */
-      #menu li:hover > ul {
-        visibility: visible; /* Hiện menu con khi hover */
-      }
-    </style>
+    <title>Trang Chủ Giản Lược</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Menu Ngang Dropdown</h2>
+    <!-- Fixed Header -->
+    <header class="main-header">
+      <h1>Tiêu đề Trang Web</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Dịch vụ</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <!-- Cấu trúc Menu ngang lồng nhau -->
-    <div id="menu">
-      <ul>
-        <li>
-          <a href="#">Trang chủ</a>
-        </li>
-        <li>
-          <a href="#">Sản phẩm</a>
-          <!-- Menu con thả xuống -->
-          <ul>
-            <li><a href="#">Điện thoại</a></li>
-            <li><a href="#">Máy tính</a></li>
-            <li><a href="#">Phụ kiện</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Dịch vụ</a>
-          <!-- Menu con thả xuống -->
-          <ul>
-            <li><a href="#">Bảo hành</a></li>
-            <li><a href="#">Sửa chữa</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Liên hệ</a>
-        </li>
-      </ul>
+    <!-- Bố cục chính 3 cột -->
+    <div class="page-container">
+      <!-- Sidebar Trái -->
+      <aside class="sidebar left-sidebar">
+        <h3>Sidebar Trái</h3>
+        <ul>
+          <li>Mục 1</li>
+          <li>Mục 2</li>
+          <li>Mục 3</li>
+        </ul>
+      </aside>
+
+      <!-- Nội dung chính -->
+      <main class="main-content">
+        <h2>Nội dung chính của trang</h2>
+        <p>
+          Đây là khu vực chứa nội dung quan trọng nhất của trang web. Chúng ta
+          sẽ đặt các bài viết, sản phẩm, hoặc thông tin chi tiết tại đây.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam,
+          quas. Dolorum, quod. Quos, nemo. Dolore, quod.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam,
+          quas. Dolorum, quod. Quos, nemo. Dolore, quod.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam,
+          quas. Dolorum, quod. Quos, nemo. Dolore, quod.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam,
+          quas. Dolorum, quod. Quos, nemo. Dolore, quod.
+        </p>
+      </main>
+
+      <!-- Sidebar Phải -->
+      <aside class="sidebar right-sidebar">
+        <h3>Sidebar Phải</h3>
+        <p>
+          Đây là một sidebar khác, có thể chứa quảng cáo, bài viết liên quan
+          hoặc các widget khác.
+        </p>
+      </aside>
     </div>
   </body>
 </html>

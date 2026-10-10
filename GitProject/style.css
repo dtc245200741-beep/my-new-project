@@ -1,38 +1,113 @@
-/* Reset cơ bản cho trang web */
+/* Thiết lập cơ bản */
+html {
+  height: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    padding: 20px;
-    margin: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  min-height: 1500px; /* Đảm bảo đủ chiều cao để cuộn kiểm tra fixed header */
+  padding-top: 70px; /* Bù khoảng trống chiều cao header để không bị che nội dung */
 }
 
-/* Quy tắc chung áp dụng cho cả 3 thẻ .card */
-.card {
-    width: 280px;
-    height: 150px;
-    padding: 20px;
-    border: 5px solid #3498db; /* Viền xanh dương */
-    margin: 20px;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 8px;
+/* Header cố định (Fixed Header) */
+.main-header {
+  position: fixed; /* Cố định vị trí header */
+  top: 0; /* Dính lề trên */
+  left: 0; /* Dính lề trái */
+  width: 100%; /* Phủ kín chiều rộng */
+  background-color: #333333;
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex; /* Dùng Flexbox căn chỉnh logo/tiêu đề và menu nav */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Luôn nổi trên cùng các phần tử khác */
+  box-sizing: border-box;
 }
 
-/* Thẻ 1: Dùng content-box */
-.card:nth-child(1) {
-    box-sizing: content-box;
-    background-color: #2ecc71; /* Màu xanh lá cây */
+.main-header h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
-/* Thẻ 2: Dùng border-box */
-.card:nth-child(2) {
-    box-sizing: border-box;
-    background-color: #f1c40f; /* Màu vàng */
-    color: #333333;
+.main-header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-/* Thẻ 3: Dùng border-box */
-.card:nth-child(3) {
-    box-sizing: border-box;
-    background-color: #e74c3c; /* Màu đỏ */
+.main-header nav ul li {
+  margin-left: 20px;
+}
+
+.main-header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-header nav ul li a:hover {
+  color: #3498db;
+}
+
+/* Container chính chia 3 cột (Flexbox Layout) */
+.page-container {
+  display: flex; /* Kích hoạt Flexbox */
+  justify-content: space-between;
+  margin: 20px;
+  gap: 20px; /* Khoảng cách giữa các cột */
+}
+
+/* Kiểu dáng chung cho Sidebars */
+.sidebar {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Giữ nguyên kích thước không co lại */
+}
+
+.left-sidebar {
+  width: 200px; /* Chiều rộng cố định sidebar trái */
+}
+
+.right-sidebar {
+  width: 200px; /* Chiều rộng cố định sidebar phải */
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  color: #333333;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+  color: #555555;
+}
+
+/* Nội dung chính */
+.main-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex-grow: 1; /* Tự động mở rộng chiếm toàn bộ diện tích giữa 2 sidebar */
+}
+
+.main-content h2 {
+  margin-top: 0;
+}
+
+.main-content p {
+  color: #444444;
+  line-height: 1.6;
 }
