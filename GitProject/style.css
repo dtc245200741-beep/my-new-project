@@ -1,99 +1,82 @@
-/* 1. Đặt phông chữ cơ bản */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+/* Reset CSS cơ bản */
+* {
   margin: 0;
-  padding: 20px 0;
-}
-
-/* 2. Vùng chính bao bọc toàn bộ trang, căn giữa màn hình */
-#main {
-  width: 960px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* 3. Phân vùng Head (Logo & Banner) */
-#head {
-  height: 100px;
-  background-color: #34495e;
-  color: #ffffff;
-  line-height: 100px;
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333333;
+  padding: 15px 20px;
+  color: white;
+  position: relative;
+}
+
+.logo {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 5px;
 }
 
-/* 4. Phân vùng Head-link (Menu liên kết đầu trang) */
-#head-link {
-  height: 40px;
-  background-color: #2c3e50;
-  color: #ffffff;
-  line-height: 40px;
-  padding-left: 15px;
-  margin-bottom: 5px;
+.nav-links {
+  list-style: none;
+  display: flex;
 }
 
-#head-link a {
-  color: #ffffff;
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
   text-decoration: none;
-  margin-right: 20px;
-  font-weight: bold;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
 }
 
-#head-link a:hover {
+.nav-links a:hover {
   color: #f1c40f;
 }
 
-/* 5. Phân vùng Left (Menu bên trái) */
-#left {
-  width: 200px;
-  min-height: 400px;
-  float: left;
-  background-color: #eef2f5;
-  border-right: 1px solid #dddddd;
-  padding: 15px;
-  box-sizing: border-box;
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
 }
 
-/* 6. Phân vùng Content (Nội dung chính ở giữa) */
-#content {
-  width: 540px;
-  min-height: 400px;
-  float: left;
-  background-color: #ffffff;
-  padding: 15px;
-  box-sizing: border-box;
-}
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Ẩn menu mặc định trên mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333333;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
 
-/* 7. Phân vùng Right (Thông tin phụ bên phải) */
-#right {
-  width: 220px;
-  min-height: 400px;
-  float: left;
-  background-color: #eef2f5;
-  border-left: 1px solid #dddddd;
-  padding: 15px;
-  box-sizing: border-box;
-}
+  .nav-links li {
+    padding: 12px 0;
+    border-top: 1px solid #444444;
+    margin: 0;
+  }
 
-/* Clearfix xử lý tràn float cho 3 cột */
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
-}
+  .menu-icon {
+    display: block; /* Hiện nút ☰ trên màn hình nhỏ */
+  }
 
-/* 8. Phân vùng Footer (Cuối trang) */
-#footer {
-  height: 60px;
-  background-color: #34495e;
-  color: #ffffff;
-  line-height: 60px;
-  text-align: center;
-  clear: both; /* Xóa float để nằm dưới 3 cột */
-  margin-top: 5px;
+  /* Khi click nút ☰, JS thêm class active để hiển thị menu */
+  .nav-links.active {
+    display: flex;
+  }
 }

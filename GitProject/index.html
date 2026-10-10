@@ -3,60 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bố Cục Trang Web Cơ Bản</title>
+    <title>Responsive Navbar</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
-    <!-- Main bao bọc toàn bộ giao diện -->
-    <div id="main">
-      <!-- 1. Head: Logo & Banner -->
-      <div id="head">LOGO & BANNER WEBSITE</div>
+    <!-- Thanh điều hướng Responsive -->
+    <nav class="navbar">
+      <div class="logo">MyWebsite</div>
+      <ul class="nav-links">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Dịch vụ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+      </ul>
+      <div class="menu-icon">☰</div>
+    </nav>
 
-      <!-- 2. Head-link: Liên kết đầu trang -->
-      <div id="head-link">
-        <a href="#">Home</a>
-        <a href="#">Students</a>
-        <a href="#">Course</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-      </div>
-
-      <!-- Khối chứa 3 cột dàn hàng ngang -->
-      <div class="clearfix">
-        <!-- 3. Left: Nội dung bên trái -->
-        <div id="left">
-          <h3>Left Menu</h3>
-          <ul>
-            <li><a href="#">Tin tức mới</a></li>
-            <li><a href="#">Khóa học HTML</a></li>
-            <li><a href="#">Khóa học CSS</a></li>
-          </ul>
-        </div>
-
-        <!-- 4. Content: Nội dung chính ở giữa -->
-        <div id="content">
-          <h2>Hot News & News</h2>
-          <p>
-            Nội dung chính của trang web hiển thị các bài viết hot news, photo
-            slide và tin tức quan trọng tại đây.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-            odio. Praesent libero. Sed cursus ante dapibus diam.
-          </p>
-        </div>
-
-        <!-- 5. Right: Thông tin bên phải -->
-        <div id="right">
-          <h3>Right Sidebar</h3>
-          <p>Khu vực hiển thị lịch, biểu đồ hoặc bản đồ chỉ đường.</p>
-        </div>
-      </div>
-
-      <!-- 6. Footer: Cuối trang -->
-      <div id="footer">
-        &copy; 2026 CodeGym - Thông tin chủ sở hữu & Bản quyền website
-      </div>
+    <!-- Khối nội dung mẫu để xem giao diện -->
+    <div style="padding: 30px; text-align: center">
+      <h2>Thực Hành Responsive Navbar</h2>
+      <p>
+        Thu nhỏ trình duyệt về dưới 768px để kiểm tra nút bấm ☰ trên thiết bị
+        di động.
+      </p>
     </div>
   </body>
 </html>
