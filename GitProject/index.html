@@ -3,18 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bố cục bằng Float</title>
+    <title>Bố Cục Trang Web Cơ Bản</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="left-column">
-        <h2>Nội dung chính</h2>
-        <p>Cột bên trái chứa nội dung chính với chiều rộng 60%.</p>
+    <!-- Main bao bọc toàn bộ giao diện -->
+    <div id="main">
+      <!-- 1. Head: Logo & Banner -->
+      <div id="head">LOGO & BANNER WEBSITE</div>
+
+      <!-- 2. Head-link: Liên kết đầu trang -->
+      <div id="head-link">
+        <a href="#">Home</a>
+        <a href="#">Students</a>
+        <a href="#">Course</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
       </div>
-      <div class="right-column">
-        <h3>Sidebar</h3>
-        <p>Cột bên phải chứa sidebar với chiều rộng 38%.</p>
+
+      <!-- Khối chứa 3 cột dàn hàng ngang -->
+      <div class="clearfix">
+        <!-- 3. Left: Nội dung bên trái -->
+        <div id="left">
+          <h3>Left Menu</h3>
+          <ul>
+            <li><a href="#">Tin tức mới</a></li>
+            <li><a href="#">Khóa học HTML</a></li>
+            <li><a href="#">Khóa học CSS</a></li>
+          </ul>
+        </div>
+
+        <!-- 4. Content: Nội dung chính ở giữa -->
+        <div id="content">
+          <h2>Hot News & News</h2>
+          <p>
+            Nội dung chính của trang web hiển thị các bài viết hot news, photo
+            slide và tin tức quan trọng tại đây.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam.
+          </p>
+        </div>
+
+        <!-- 5. Right: Thông tin bên phải -->
+        <div id="right">
+          <h3>Right Sidebar</h3>
+          <p>Khu vực hiển thị lịch, biểu đồ hoặc bản đồ chỉ đường.</p>
+        </div>
+      </div>
+
+      <!-- 6. Footer: Cuối trang -->
+      <div id="footer">
+        &copy; 2026 CodeGym - Thông tin chủ sở hữu & Bản quyền website
       </div>
     </div>
   </body>

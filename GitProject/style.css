@@ -1,29 +1,99 @@
-/* Container bao bọc toàn bộ bố cục */
-.container {
-  width: 100%;
+/* 1. Đặt phông chữ cơ bản */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px 0;
 }
 
-/* Cột bên trái: Chiếm 60% chiều rộng */
-.left-column {
-  width: 60%;
+/* 2. Vùng chính bao bọc toàn bộ trang, căn giữa màn hình */
+#main {
+  width: 960px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+
+/* 3. Phân vùng Head (Logo & Banner) */
+#head {
+  height: 100px;
+  background-color: #34495e;
+  color: #ffffff;
+  line-height: 100px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* 4. Phân vùng Head-link (Menu liên kết đầu trang) */
+#head-link {
+  height: 40px;
+  background-color: #2c3e50;
+  color: #ffffff;
+  line-height: 40px;
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+#head-link a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+#head-link a:hover {
+  color: #f1c40f;
+}
+
+/* 5. Phân vùng Left (Menu bên trái) */
+#left {
+  width: 200px;
+  min-height: 400px;
   float: left;
-  background-color: lightblue;
-  padding: 20px;
+  background-color: #eef2f5;
+  border-right: 1px solid #dddddd;
+  padding: 15px;
   box-sizing: border-box;
 }
 
-/* Cột bên phải: Chiếm 38% chiều rộng */
-.right-column {
-  width: 38%;
-  float: right;
-  background-color: lightgreen;
-  padding: 20px;
+/* 6. Phân vùng Content (Nội dung chính ở giữa) */
+#content {
+  width: 540px;
+  min-height: 400px;
+  float: left;
+  background-color: #ffffff;
+  padding: 15px;
   box-sizing: border-box;
 }
 
-/* Kỹ thuật Clearfix xử lý tràn khung float */
-.container::after {
+/* 7. Phân vùng Right (Thông tin phụ bên phải) */
+#right {
+  width: 220px;
+  min-height: 400px;
+  float: left;
+  background-color: #eef2f5;
+  border-left: 1px solid #dddddd;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* Clearfix xử lý tràn float cho 3 cột */
+.clearfix::after {
   content: "";
   display: block;
   clear: both;
+}
+
+/* 8. Phân vùng Footer (Cuối trang) */
+#footer {
+  height: 60px;
+  background-color: #34495e;
+  color: #ffffff;
+  line-height: 60px;
+  text-align: center;
+  clear: both; /* Xóa float để nằm dưới 3 cột */
+  margin-top: 5px;
 }
